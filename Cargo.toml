@@ -16,6 +16,10 @@ path = "./variables/src/main.rs"
 name = "functions"
 path = "./functions/src/main.rs"
 
+[[bin]]
+name = "branches"
+path = "./branches/src/main.rs"
+
 
 [dependencies]
 rand = "0.8.3"
