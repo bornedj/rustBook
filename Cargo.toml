@@ -8,6 +8,10 @@ edition = "2021"
 name = "guessing_game"
 path = "./guessing_game/src/main.rs"
 
+[[bin]]
+name = "variables"
+path = "./variables/src/main.rs"
+
 
 [dependencies]
 rand = "0.8.3"
