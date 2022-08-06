@@ -1,6 +1,6 @@
 # Welcome to my Rust Book Repo
 
-## This repo is a collection of projects made while completing Rust's "Book"
+## This repo is a collection of projects made while completing The [Rust Programming Language Book](https://doc.rust-lang.org/book)
 
 ## guessing_game
 

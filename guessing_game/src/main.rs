@@ -17,7 +17,10 @@ fn main() {
         // let guess: u32 = guess.trim().parse().expect("Please enter an number"); // depreciated line to handle errors
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
-            Err(_) => continue,
+            Err(_) => {
+                println!("Please enter a valid number");
+                continue;
+            }
         };
         println!("You guessed: {guess}");
 
@@ -28,7 +31,7 @@ fn main() {
                 println!("You win!");
                 break;
             }
-            Ordering::Greater => println!("Too Big")
+            Ordering::Greater => println!("Too Big"),
         }
         
     }
