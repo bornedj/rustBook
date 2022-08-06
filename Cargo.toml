@@ -10,3 +10,4 @@ path = "./guessing_game/src/main.rs"
 
 
 [dependencies]
+rand = "0.8.3"
