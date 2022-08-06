@@ -20,6 +20,9 @@ path = "./functions/src/main.rs"
 name = "branches"
 path = "./branches/src/main.rs"
 
+[[bin]]
+name = "ownership"
+path = "./ownership/src/main.rs"
 
 [dependencies]
 rand = "0.8.3"
