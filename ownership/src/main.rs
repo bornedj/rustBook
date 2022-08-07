@@ -30,6 +30,15 @@ fn main() {
     // data types that have a known size on compile time and are stored on the stack can have the copy trait which allows the above comment ^^
 
     // example explaining how passing a variable to a function is the same as assigning it to another variable.
+
+    //function calls to additional book unit portions
+    passing_to_function_example();
+    passing_through_function_return();
+    passing_multiple_with_tuple();
+    passing_through_function_return();
+    reference_example();
+    // below line would call function to create a dangling reference
+    // let ref_to_nothing = dangle();
 }
 
 fn passing_to_function_example() {
@@ -103,3 +112,25 @@ fn calculate_length(s: String) -> (String, usize) {
 
 // ----------------------------------------------------------------------------
 // references
+fn reference_example() {
+    let s1 = String::from("hello");
+
+    let len = calculate_length_2(&s1);
+
+    println!("The length of '{}' is {}.", s1, len);
+}
+
+fn calculate_length_2(s: &String) -> usize {
+    s.len()
+}
+
+// attempting to create a dangling reference will not allow the program to compile
+// fn dangle() -> &String {
+//     let s = String::from("hello");
+
+//     &s
+// }
+
+// major references rules:
+// At any given time, you can have either one mutable reference or any number of immutable references.
+//References must always be valid.
