@@ -21,3 +21,7 @@ Covers concepts of the stack vs heap in memory allocation and how rust deals wit
 ### Structs
 
 Covers defining and instantiating structs, as well as ownership and partially covers lifetimes. Covers methods, and associated functions within the rectangles project.
+
+### Enums
+
+Covers defining enums, and there many use cases. How the match control flow can be useful with them. Also covers the if let syntax.
