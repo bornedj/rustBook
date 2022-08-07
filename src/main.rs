@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, world!");
+    println!("Please read the README.md to understand what projects/subjects have been completed while completing the Rust programming language book.");
 }

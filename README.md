@@ -16,4 +16,4 @@ Covers functions, expressions, and statements.
 
 ### Ownership
 
-Covers concepts of the stack vs heap in memory allocation and how rust allocation deals with the common pain points of other low-level languages. Covers references and borrowing, and introduces the concept of limetimes. Also covers the slice type.
+Covers concepts of the stack vs heap in memory allocation and how rust deals with the common pain points of other low-level languages. Covers references and borrowing, and introduces the concept of limetimes. Also covers the slice type.

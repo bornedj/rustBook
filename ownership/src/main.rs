@@ -1,4 +1,10 @@
 #![allow(unused_variables, dead_code)]
+mod references;
+mod slices;
+
+use crate::references::references::reference_example;
+use crate::slices::slices::{array_slice, slices, first_word, first_word_no_slices};
+
 
 fn main() {
     // example of scope for variable lifetime
@@ -24,7 +30,7 @@ fn main() {
     let s1 = String::from("hello");
     let s2 = s1.clone();
 
-    println!("s1 = {}, s2 = {}", s1, s2);
+    println!("s1 = {}, s2 = {}", &s1, s2);
 
     //borrowing errors are caused when that variable is stored on the heap with an unknownsize at compile time. So copying variables on the stack like integers does not validate the rule
     // data types that have a known size on compile time and are stored on the stack can have the copy trait which allows the above comment ^^
@@ -39,6 +45,12 @@ fn main() {
     reference_example();
     // below line would call function to create a dangling reference
     // let ref_to_nothing = dangle();
+    slices();
+    first_word(&s1);
+    first_word_no_slices(&s1);
+    array_slice();
+    println!("run all ");
+
 }
 
 fn passing_to_function_example() {
@@ -110,27 +122,3 @@ fn calculate_length(s: String) -> (String, usize) {
     (s, length)
 }
 
-// ----------------------------------------------------------------------------
-// references
-fn reference_example() {
-    let s1 = String::from("hello");
-
-    let len = calculate_length_2(&s1);
-
-    println!("The length of '{}' is {}.", s1, len);
-}
-
-fn calculate_length_2(s: &String) -> usize {
-    s.len()
-}
-
-// attempting to create a dangling reference will not allow the program to compile
-// fn dangle() -> &String {
-//     let s = String::from("hello");
-
-//     &s
-// }
-
-// major references rules:
-// At any given time, you can have either one mutable reference or any number of immutable references.
-//References must always be valid.
