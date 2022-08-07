@@ -32,5 +32,9 @@ path = "./structs/src/main.rs"
 name = "rectangles"
 path = "./rectangles/src/main.rs"
 
+[[bin]]
+name = "enums"
+path = "./enums/src/main.rs"
+
 [dependencies]
 rand = "0.8.3"
