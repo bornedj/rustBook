@@ -25,3 +25,8 @@ Covers defining and instantiating structs, as well as ownership and partially co
 ### Enums
 
 Covers defining enums, and there many use cases. How the match control flow can be useful with them. Also covers the if let syntax.
+
+### Restaurant
+
+Project builds a restaurant library crate to demonstrate packages and modules.
+Chapter covers packages, crates, modules and use, paths, and public vs private within crate scope.

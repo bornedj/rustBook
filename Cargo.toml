@@ -25,16 +25,16 @@ name = "ownership"
 path = "./ownership/src/main.rs"
 
 [[bin]]
-name = "structs"
-path = "./structs/src/main.rs"
+name = "enums"
+path = "./enums/src/main.rs"
 
 [[bin]]
 name = "rectangles"
 path = "./rectangles/src/main.rs"
 
 [[bin]]
-name = "enums"
-path = "./enums/src/main.rs"
+name = "restaurant"
+path = "./restaurant/src/lib.rs"
 
 [dependencies]
 rand = "0.8.3"
