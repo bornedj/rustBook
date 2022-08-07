@@ -28,5 +28,9 @@ path = "./ownership/src/main.rs"
 name = "structs"
 path = "./structs/src/main.rs"
 
+[[bin]]
+name = "rectangles"
+path = "./rectangles/src/main.rs"
+
 [dependencies]
 rand = "0.8.3"

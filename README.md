@@ -16,6 +16,8 @@ Covers functions, expressions, and statements.
 
 ### Ownership
 
-Covers concepts of the stack vs heap in memory allocation and how rust deals with the common pain points of other low-level languages. Covers references and borrowing, and introduces the concept of limetimes. Also covers the slice type.
+Covers concepts of the stack vs heap in memory allocation and how rust deals with the common pain points of other low-level languages. Covers references and borrowing, and introduces the concept of lifetimes. Also covers the slice type.
 
-### Structus
+### Structs
+
+Covers defining and instantiating structs, as well as ownership and partially covers lifetimes. Covers methods, and associated functions within the rectangles project.
