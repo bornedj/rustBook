@@ -30,3 +30,7 @@ Covers defining enums, and there many use cases. How the match control flow can 
 
 Project builds a restaurant library crate to demonstrate packages and modules.
 Chapter covers packages, crates, modules and use, paths, and public vs private within crate scope.
+
+### Collections
+
+Covers the common standard library collections: strings, Vecs, and Hash Maps.
