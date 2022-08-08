@@ -42,3 +42,7 @@ Covers the difference between unrecoverable and recoverable errors, how you shou
 ### Generic Types, Traits, and Lifetimes
 
 Generics are used to cover duplication of concepts in rust. Covers extracting functions to reduce code duplication, generic types in structs and enums, how traits are used to define behavior in a generic way, and lifetimes which is a variety of generics that tell the compiler how references relate to one another.
+
+### adder
+
+Project used to work with the default tests that come with the creation of a library using cargo. Demonstrates the different test attributes, and how you can build tests that have enum signatures.
