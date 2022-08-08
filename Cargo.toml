@@ -36,5 +36,9 @@ path = "./rectangles/src/main.rs"
 name = "collections"
 path = "./collections/src/main.rs"
 
+[[bin]]
+name = "error_handling"
+path = "./error_handling/src/main.rs"
+
 [dependencies]
 rand = "0.8.3"
