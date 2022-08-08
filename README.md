@@ -37,4 +37,4 @@ Covers the common standard library collections: strings, Vecs, and Hash Maps.
 
 ### error_handling
 
-Covers the difference between unrecoverable and recoverable errors, how you should handle them, and when to expect the different kinds.
+Covers the difference between unrecoverable and recoverable errors, how you should handle them, and when to expect/implement the different kinds.
