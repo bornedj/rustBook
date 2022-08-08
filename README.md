@@ -38,3 +38,7 @@ Covers the common standard library collections: strings, Vecs, and Hash Maps.
 ### error_handling
 
 Covers the difference between unrecoverable and recoverable errors, how you should handle them, and when to expect/implement the different kinds.
+
+### Generic Types, Traits, and Lifetimes
+
+Generics are used to cover duplication of concepts in rust. Covers extracting functions to reduce code duplication, generic types in structs and enums, how traits are used to define behavior in a generic way, and lifetimes which is a variety of generics that tell the compiler how references relate to one another.

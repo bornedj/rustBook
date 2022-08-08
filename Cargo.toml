@@ -40,5 +40,9 @@ path = "./collections/src/main.rs"
 name = "error_handling"
 path = "./error_handling/src/main.rs"
 
+[[bin]]
+name = "generics_traits_lifetimes"
+path = "./generics_traits_lifetimes/src/main.rs"
+
 [dependencies]
 rand = "0.8.3"
