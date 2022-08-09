@@ -48,5 +48,10 @@ path = "./generics_traits_lifetimes/src/main.rs"
 name = "minigrep"
 path = "./minigrep/src/main.rs"
 
+[lib]
+name = "minigrep"
+path = "./minigrep/src/lib.rs"
+
+
 [dependencies]
 rand = "0.8.3"
