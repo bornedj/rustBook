@@ -101,3 +101,16 @@ pub fn add_two(a: i32) -> i32 {
 pub fn greeting(name: &str) -> String {
     String::from("Hello!")
 }
+
+// calling cargo test with -- has options for the binary
+// cargo test --show-output will show the stdout for tests that pass
+// cargo test --test-threads=1 will use only one thread and run all tests in order instead of parallel, useful for when tests depend on a shared state
+// cargo test fn_name will only run the specified function/test
+// cargo test partial_function_name tests with names that match the given partial
+// the ignore attribute can be added to tests that want to be ignored on the cargo test call
+// can run only ignored tests with cargo test -- --ignored
+//can run all tests including ignored with cargo test -- --include-ignored
+
+
+//convetion to keep unit tests in the src directory in the file they are 
+// integration tests are external from the library and interface with your libraries public api
