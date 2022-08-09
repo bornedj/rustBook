@@ -46,3 +46,7 @@ Generics are used to cover duplication of concepts in rust. Covers extracting fu
 ### adder
 
 Project used to work with the default tests that come with the creation of a library using cargo. Demonstrates the different test attributes, and how you can build tests that have enum signatures. Covers difference between unit and integration tests in Rust, as well as how to organize modules and crates within the tests directory of a project.
+
+### minigrep
+
+Project is a smaller version of the CLI tool grep. Completing the project helped to practice information from previous chapters: package/module management, using test driven development, ownership, and all the various data types.
