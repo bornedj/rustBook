@@ -1,5 +1,5 @@
 // #![allow(dead_code)]
-pub use std::{env, fs, process};
+pub use std::{env, fs, process, error::Error};
 
 fn main() {
     let args: Vec<String> = env::args().collect();// return the args as vector of strings
@@ -14,7 +14,10 @@ fn main() {
     println!("In file {}", config.filename);
 
     // reading contents
-    run(config);
+    if let Err(e) = run(config) {
+        println!("Application error: {}", e);
+        process::exit(1);
+    }
 }
 
 // CLI parsing
@@ -42,8 +45,8 @@ impl Config {
 }
 
 // function takes the config and reads the file with the appropriate name
-fn run(config: Config) {
-    let contents = fs::read_to_string(config.filename)
-    .expect("Something went wrong reading the file");
+fn run(config: Config) -> Result<(), Box<dyn Error>> {
+    let contents = fs::read_to_string(config.filename)?;
     println!("With text:\n{}", contents);
+    Ok(())
 }
