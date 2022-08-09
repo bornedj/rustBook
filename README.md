@@ -50,3 +50,7 @@ Project used to work with the default tests that come with the creation of a lib
 ### minigrep
 
 Project is a smaller version of the CLI tool grep that takes a query and filename as parameters. Case sensitivity can be changed with the IGNORED_CASE environmental variable. Completing the project helped to practice information from previous chapters: package/module management, using test driven development, ownership, and all the various data types. Also introduces the std::env module.
+
+### Functional language features
+
+#### Closures

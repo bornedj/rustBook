@@ -52,6 +52,10 @@ path = "./minigrep/src/main.rs"
 name = "minigrep"
 path = "./minigrep/src/lib.rs"
 
+[[bin]]
+name = "closures"
+path = "./closures/src/main.rs"
+
 
 [dependencies]
 rand = "0.8.3"
