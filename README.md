@@ -54,3 +54,7 @@ Project is a smaller version of the CLI tool grep that takes a query and filenam
 ### Functional language features
 
 #### Closures
+
+Unit covers the three traits a closure can have, and how they capture their environment.
+
+#### Iterators
