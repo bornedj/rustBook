@@ -35,6 +35,13 @@ impl Inventory {
     }
 }
 
+// will use in example of mutable closure
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
 fn main() {
     let store = Inventory {
         shirts: vec![ShirtColor::Blue, ShirtColor::Red, ShirtColor::Blue],
@@ -60,4 +67,58 @@ fn main() {
         thread::sleep(Duration::from_secs(2));
         num
     };
+
+    // example closure that only borrows a value
+    let list = vec![1, 2, 3];
+    println!("Before defining closure: {:?}", list);
+
+    let only_borrows = || println!("From closure: {:?}", list);
+
+    println!("Before calling closure: {:?}", list);
+    only_borrows();
+    println!("After calling closure: {:?}", list);
+
+    // example closure that borrows mutably
+    let mut list = vec![1, 2, 3];
+    println!("Before defining closure: {:?}", list);
+
+    let mut borrows_mutably = || list.push(7);
+
+    // notice that there isn't a println! here like in the previous example
+    // this is because the function is borrowing the value mutably untl it is called, we cannot have an immutable borrow at the same time
+    borrows_mutably();
+    println!("After calling closure: {:?}", list);
+
+
+    // example of mutable closure
+    let mut list = [
+        Rectangle {
+            width: 10,
+            height: 1,
+        },
+        Rectangle {
+            width: 3,
+            height: 5,
+        },
+        Rectangle {
+            width: 7,
+            height: 12,
+        },
+    ];
+
+    list.sort_by_key(|r| r.width);
+    println!("{:#?}", list);
 }
+
+// example code showing how the unwrap_or_else method takes a closure
+// impl<T> Option<T> {
+//     pub fn unwrap_or_else<F>(self, f: F) -> T
+//     where
+//         F: FnOnce() -> T
+//     {
+//         match self {
+//             Some(x) => x,
+//             None => f(),
+//         }
+//     }
+// }
