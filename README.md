@@ -58,3 +58,13 @@ Project is a smaller version of the CLI tool grep that takes a query and filenam
 Unit covers the three traits a closure can have, and how they capture their environment.
 
 #### Iterators
+
+Unit covers iterator ownership, and the different kinds of iterator adaptors. Also updates the minigrep project to use iterator logic.
+
+### Crates
+
+Explains customizing builds with release profiles, how to publish crates to [crates.io](https://crates.io/) and how to yank/maintain published crates, how the rustdoc tool works, cargo workspaces, and extending cargo with custom commands.
+
+#### add
+
+Demonstrates how to create and manage a cargo workspace.
