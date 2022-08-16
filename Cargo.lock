@@ -3,10 +3,38 @@
 version = 3
 
 [[package]]
+name = "branches"
+version = "0.1.0"
+
+[[package]]
 name = "cfg-if"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
+
+[[package]]
+name = "closures"
+version = "0.1.0"
+
+[[package]]
+name = "collections"
+version = "0.1.0"
+
+[[package]]
+name = "enums"
+version = "0.1.0"
+
+[[package]]
+name = "error_handling"
+version = "0.1.0"
+
+[[package]]
+name = "functions"
+version = "0.1.0"
+
+[[package]]
+name = "generics_traits_lifetimes"
+version = "0.1.0"
 
 [[package]]
 name = "getrandom"
@@ -20,10 +48,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "guessing_game"
+version = "0.1.0"
+dependencies = [
+ "rand",
+]
+
+[[package]]
+name = "iterators"
+version = "0.1.0"
+
+[[package]]
 name = "libc"
-version = "0.2.127"
+version = "0.2.132"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "505e71a4706fa491e9b1b55f51b95d4037d0821ee40131190475f692b35b009b"
+checksum = "8371e4e5341c3a96db127eb2465ac681ced4c433e01dd0e938adbef26ba93ba5"
+
+[[package]]
+name = "minigrep"
+version = "0.1.0"
+
+[[package]]
+name = "ownership"
+version = "0.1.0"
 
 [[package]]
 name = "ppv-lite86"
@@ -62,11 +109,16 @@ dependencies = [
 ]
 
 [[package]]
-name = "the_book"
+name = "rectangles"
 version = "0.1.0"
-dependencies = [
- "rand",
-]
+
+[[package]]
+name = "smart_pointers"
+version = "0.1.0"
+
+[[package]]
+name = "variables"
+version = "0.1.0"
 
 [[package]]
 name = "wasi"

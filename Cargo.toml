@@ -1,67 +1,20 @@
-[package]
-name = "the_book"
-version = "0.1.0"
-edition = "2021"
-description = "Project used to complete the guided Rust Book."
-license = "MIT OR Apache-2.0"
-
-
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-[[bin]]
-name = "guessing_game"
-path = "./guessing_game/src/main.rs"
 
-[[bin]]
-name = "variables"
-path = "./variables/src/main.rs"
+[workspace]
+members = [
+    "guessing_game",
+    "variables",
+    "functions",
+    "branches",
+    "ownership",
+    "enums",
+    "rectangles",
+    "collections",
+    "error_handling",
+    "generics_traits_lifetimes",
+    "minigrep",
+    "closures",
+    "iterators",
+    "smart_pointers",
+]
 
-[[bin]]
-name = "functions"
-path = "./functions/src/main.rs"
-
-[[bin]]
-name = "branches"
-path = "./branches/src/main.rs"
-
-[[bin]]
-name = "ownership"
-path = "./ownership/src/main.rs"
-
-[[bin]]
-name = "enums"
-path = "./enums/src/main.rs"
-
-[[bin]]
-name = "rectangles"
-path = "./rectangles/src/main.rs"
-
-[[bin]]
-name = "collections"
-path = "./collections/src/main.rs"
-
-[[bin]]
-name = "error_handling"
-path = "./error_handling/src/main.rs"
-
-[[bin]]
-name = "generics_traits_lifetimes"
-path = "./generics_traits_lifetimes/src/main.rs"
-
-[[bin]]
-name = "minigrep"
-path = "./minigrep/src/main.rs"
-
-[lib]
-name = "minigrep"
-path = "./minigrep/src/lib.rs"
-
-[[bin]]
-name = "closures"
-path = "./closures/src/main.rs"
-
-[[bin]]
-name = "iterators"
-path = "./iterators/src/main.rs"
-
-[dependencies]
-rand = "0.8.3"
