@@ -72,3 +72,7 @@ Demonstrates how to create and manage a cargo workspace.
 ### Smart Pointers
 
 Section covers boxes, the deref and drop trait, the reference counter type, reference cell type, and how reference cycles can cause memory leaks.
+
+### fearless concurrency
+
+Chapter covers how Rust's ownership and type systems allow for "fearless" use of concurrency.

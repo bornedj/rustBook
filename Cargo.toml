@@ -16,5 +16,6 @@ members = [
     "closures",
     "iterators",
     "smart_pointers",
+    "concurrency",
 ]
 
