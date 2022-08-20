@@ -75,4 +75,8 @@ Section covers boxes, the deref and drop trait, the reference counter type, refe
 
 ### fearless concurrency
 
-Chapter covers how Rust's ownership and type systems allow for "fearless" use of concurrency.
+Chapter covers how Rust's ownership and type systems allow for "fearless" use of concurrency. Covers concurrency using messages to passage data between threads as well as concurrency using shared state. Also covers the Send and Sync traits.
+
+### Object Orientated Programming Features
+
+Rust has encapsulation, and types and enums represent objects; however, Rust lacks inheritance that often classifies a language as an OOP language.

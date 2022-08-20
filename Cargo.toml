@@ -17,5 +17,6 @@ members = [
     "iterators",
     "smart_pointers",
     "concurrency",
+    "oop",
 ]
 
