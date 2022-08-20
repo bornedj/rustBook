@@ -9,4 +9,12 @@ fn main () {
     println!("\nMove example");
     concurrency::move_example();
 
+    println!("\nBasic channel example");
+    concurrency::channel_example();
+
+    println!("\nChannel showing concurrency as well");
+    concurrency::channel_display_concurrency();
+
+    println!("\n Function showing how multiple producers can pass inputs to a single consumer thread");
+    concurrency::multiple_producer_single_consumer();
 }
