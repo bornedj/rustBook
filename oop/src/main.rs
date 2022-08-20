@@ -1,6 +1,8 @@
 #![allow(dead_code)]
-use oop::{Draw, Screen, Button};
+use oop::gui::{Draw, Screen, Button};
+use oop::blog::{Post};
 fn main () {
+    // trait objects
     let screen = Screen {
         components: vec![
             Box::new(SelectBox {
@@ -21,8 +23,18 @@ fn main () {
     };
     screen.run();
 
-}
+    // state pattern through blog post example
+    let mut post = Post::new();
 
+    post.add_text("I ate a salad for lunch today");
+    assert_eq!("", post.content());
+
+    post.request_review();
+    assert_eq!("", post.content());
+
+    post.approve();
+    assert_eq!("I ate a salad for lunch today", post.content());
+}
 // demonstrating that a user could add more gui components as long as they implement the Draw Trait
 // implementation of the select box is similar to duck typing in dynamicly typed languages
 #[derive(Debug)]

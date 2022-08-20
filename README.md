@@ -79,4 +79,4 @@ Chapter covers how Rust's ownership and type systems allow for "fearless" use of
 
 ### Object Orientated Programming Features
 
-Rust has encapsulation, and types and enums represent objects; however, Rust lacks inheritance that often classifies a language as an OOP language.
+Rust has encapsulation, and types and enums represent something similar to objects; however, Rust lacks inheritance that often classifies a language as an OOP language. Trait objects allow for something similar to duck typing in dynamic languages but do so with a cost to performance.
