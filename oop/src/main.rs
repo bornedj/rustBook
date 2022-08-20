@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 use oop::gui::{Draw, Screen, Button};
-use oop::blog::{Post};
 fn main () {
     // trait objects
     let screen = Screen {
@@ -23,6 +22,15 @@ fn main () {
     };
     screen.run();
 
+    // function below uses the oop state pattern accomplished through traits
+    state_pattern();
+
+    // encoding states and behaviors as types
+    state_as_types();
+}
+
+fn state_pattern () {
+    use oop::blog::{Post};
     // state pattern through blog post example
     let mut post = Post::new();
 
@@ -35,6 +43,22 @@ fn main () {
     post.approve();
     assert_eq!("I ate a salad for lunch today", post.content());
 }
+
+fn state_as_types () {
+    use oop::blog_types::Post;
+
+    let mut post = Post::new();
+
+    post.add_text("I ate a salad for lunch today");
+
+    let post = post.request_review();
+
+    let post = post.approve();
+
+    assert_eq!("I ate a salad for lunch today", post.content());
+
+}
+
 // demonstrating that a user could add more gui components as long as they implement the Draw Trait
 // implementation of the select box is similar to duck typing in dynamicly typed languages
 #[derive(Debug)]
