@@ -68,3 +68,7 @@ Explains customizing builds with release profiles, how to publish crates to [cra
 #### add
 
 Demonstrates how to create and manage a cargo workspace.
+
+### Smart Pointers
+
+Section covers boxes, the deref and drop trait, the reference counter type, reference cell type, and how reference cycles can cause memory leaks.

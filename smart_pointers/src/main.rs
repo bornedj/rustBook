@@ -2,7 +2,6 @@
 use std::mem::drop;
 use std::rc::Rc;
 use smart_pointers::List::{Cons, Nil};
-use smart_pointers;
 
 fn main() {
     // example showing how to use a box, 5 is stored on the heap here
@@ -77,3 +76,4 @@ fn main() {
     println!("count after c goes out of scope = {}", Rc::strong_count(&a));
 
 }
+
