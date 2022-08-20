@@ -1,4 +1,5 @@
 use std::ops::Deref;
+use std::rc::Rc;
 // implementing a cons list from the lisp language here, will cause error as the recursive type is not handled
 // pub enum List {
 //     Cons(i32, List),
@@ -6,9 +7,15 @@ use std::ops::Deref;
 // }
 
 // implementing a cons list from the lisp language here
+// converted to a Reference counter for cons recursive type
+// pub enum List {
+//     Cons(i32, Box<List>),
+//     Nil,
+// }
+
 pub enum List {
-    Cons(i32, Box<List>),
-    Nil,
+    Cons(i32, Rc<List>),
+    Nil
 }
 
 // implementing my own box
