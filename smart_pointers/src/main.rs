@@ -3,6 +3,8 @@ use std::mem::drop;
 use std::rc::Rc;
 use smart_pointers::List::{Cons, Nil};
 
+pub mod tree;
+
 fn main() {
     // example showing how to use a box, 5 is stored on the heap here
     let b = Box::new(5);
@@ -75,5 +77,6 @@ fn main() {
     }
     println!("count after c goes out of scope = {}", Rc::strong_count(&a));
 
+    tree::trees();
 }
 
