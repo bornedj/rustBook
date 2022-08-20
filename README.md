@@ -80,3 +80,7 @@ Chapter covers how Rust's ownership and type systems allow for "fearless" use of
 ### Object Orientated Programming Features
 
 Rust has encapsulation, and types and enums represent something similar to objects; however, Rust lacks inheritance that often classifies a language as an OOP language. Trait objects allow for something similar to duck typing in dynamic languages but do so with a cost to performance. Demonstrated the state pattern of OOP through traits and types.
+
+### Patterns
+
+Gives examples of, and explains how to read common patterns within Rust. Explains the difference between refutable and irrefutable patterns within Rust, as well as when each type can be used.
