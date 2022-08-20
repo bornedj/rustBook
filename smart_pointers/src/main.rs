@@ -1,6 +1,8 @@
 #![allow(unused_variables)]
-use List::{Cons, Nil};
-use std::ops::Deref;
+use std::mem::drop;
+use smart_pointers::List::{Cons, Nil};
+use smart_pointers;
+
 fn main() {
     // example showing how to use a box, 5 is stored on the heap here
     let b = Box::new(5);
@@ -26,51 +28,26 @@ fn main() {
 
     // showing the deref on myBox
     let x = 5;
-    let y = MyBox::new(x);
+    let y = smart_pointers::MyBox::new(x);
 
     assert_eq!(5, x);
     assert_eq!(5, *y);
 
     // demonstrating deref coercion as the hello fn takes a &str arg
-    let my_name = MyBox::new("Daniel".to_string());
-    hello(&my_name);
+    let my_name = smart_pointers::MyBox::new("Daniel".to_string());
+    smart_pointers::hello(&my_name);
     // call below demonstrates what the function call would look like without deref coercion
-    hello(&(*&my_name)[..]);
+    smart_pointers::hello(&(*&my_name)[..]);
 
-}
+    // demonstrating how an object is dropped with a defined drop trait
+    let c = smart_pointers::CustomSmartPointer {
+        data: String::from("my stuff"),
+    };
+    let d = smart_pointers::CustomSmartPointer {
+        data: String::from("other stuff"),
+    };
+    // c.drop(); // would cause compile error, you can't use the drop method manually have to use std::mem::drop
+    drop(c); // shows that the implemenation of the drop trait works with the mem::drop
+    println!("CustomSmartPointers created.");
 
-// implementing a cons list from the lisp language here, will cause error as the recursive type is not handled
-// pub enum List {
-//     Cons(i32, List),
-//     Nil,
-// }
-
-// implementing a cons list from the lisp language here
-enum List {
-    Cons(i32, Box<List>),
-    Nil,
-}
-
-// implementing my own box
-struct MyBox<T>(T);
-
-// had to add the deref trait below to allow myBox to behave the same as the std box
-impl<T> MyBox<T> {
-    fn new(x: T) -> MyBox<T> {
-        MyBox(x)
-    }
-}
-
-// correct implementation of myBox, allows the deref method to be used on the object so the asserts main will pass
-impl<T> Deref for MyBox<T> {
-    type Target = T;
-
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-
-// function used in deref coercion example
-fn hello(name: &str) {
-    println!("Hello, {name}");
 }
