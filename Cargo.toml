@@ -19,5 +19,6 @@ members = [
     "concurrency",
     "oop",
     "patterns",
+    "advanced_rust",
 ]
 

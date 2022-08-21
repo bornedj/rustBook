@@ -3,6 +3,10 @@
 version = 3
 
 [[package]]
+name = "advanced_rust"
+version = "0.1.0"
+
+[[package]]
 name = "branches"
 version = "0.1.0"
 
