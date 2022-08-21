@@ -3,6 +3,7 @@ pub mod unsafe_rust;
 pub mod advanced_traits;
 pub mod advanced_types;
 pub mod advanced_functions;
+pub mod macros;
 
 #[cfg(test)]
 mod tests {

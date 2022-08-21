@@ -88,3 +88,7 @@ Gives examples of, and explains how to read common patterns within Rust. Explain
 ### Advanced Rust Features
 
 Covers advanced traits, types, and functions/closures, unsafe Rust, and macros.
+
+## Final Project
+
+Building a web server from scratch
