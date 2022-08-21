@@ -6,6 +6,7 @@ fn main () {
     // dangerous does nothing, but is an unsafe function. Used to demonstrate that there has to be a unsafe block to call the function
     unsafe {
         advanced_rust::dangerous();
+        println!("Absolute value of -3 according to C: {}", advanced_rust::abs(-3));// uses an external function with the extern key word
     }
     advanced_rust::using_split_at_mut(); // split_at_mut is a standard method of Vecs that splits a vector at a given index, and must be written using unsafe rust code
     // function must be written using unsafe rust as it makes to mutable borrows of a vector

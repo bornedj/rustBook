@@ -54,6 +54,26 @@ pub fn my_split_at_mut(values: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32
         )
     }
 }
+// uses C's absolute value function
+extern "C" {
+    pub fn abs(input: i32) -> i32;
+}
+
+// the inverse of using function from an ABI, allowing a rust function to be called by other languages
+#[no_mangle]// needed for extern functions that are going to called in other languages
+pub extern "C" fn call_from_c() {// unsafe not needed here
+    println!("Just called a Rust function from C!");
+}
+
+// traits can be unsafe if any of their methods have an invariant the compiler can't identify
+unsafe trait Foo {
+    // methods go here
+}
+
+unsafe impl Foo for i32 {
+    // method implementations go here
+}
+
 
 #[cfg(test)]
 mod tests {
