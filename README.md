@@ -91,4 +91,4 @@ Covers advanced traits, types, and functions/closures, unsafe Rust, and macros.
 
 ## Final Project
 
-Building a web server from scratch
+Building a web server from scratch using the standard library.

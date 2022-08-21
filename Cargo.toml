@@ -20,5 +20,6 @@ members = [
     "oop",
     "patterns",
     "advanced_rust",
+    "hello",
 ]
 
