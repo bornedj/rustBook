@@ -1,6 +1,8 @@
+#![allow(unused_variables)]
 use advanced_rust::unsafe_rust;
 use advanced_rust::advanced_traits::{Point, Human, Pilot, Wizard, Dog, Animal, OutlinePrint, Wrapper};
 use advanced_rust::advanced_types;
+use advanced_rust::advanced_functions;
 fn main () {
     unsafe_rust::raw_pointers();// declaration of raw pointers outside of an unsafe block
     unsafe_rust::raw_pointer_arbitrary(); // declares a raw pointer at an arbitrary memory location. Just a demonstration that this is possible, there are extremely few cases where you would chose to do this
@@ -46,4 +48,13 @@ fn main () {
     // shows how to create a type alias with the kilometers type
     advanced_types::type_alias();
     advanced_types::long_type_alias(); // shows common use for type alias, reducing the number times you write a long signature or parameter
+    
+    println!("\nAdvanced Functions");
+    // example of passing function pointer as an argument
+    let answer = advanced_functions::do_twice(advanced_functions::add_one, 5);
+    println!("The answer is: {}", answer);
+
+    // using a closure or function pointer to acheive the same result
+    advanced_functions::closure_vs_fn_pointer();
+    let closure = advanced_functions::returns_closure();
 }

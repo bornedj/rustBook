@@ -86,3 +86,5 @@ Rust has encapsulation, and types and enums represent something similar to objec
 Gives examples of, and explains how to read common patterns within Rust. Explains the difference between refutable and irrefutable patterns within Rust, as well as when each type can be used.
 
 ### Advanced Rust Features
+
+Covers advanced traits, types, and functions/closures, unsafe Rust, and macros.
