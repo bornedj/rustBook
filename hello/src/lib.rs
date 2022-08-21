@@ -24,7 +24,7 @@ impl Worker {
     fn new(id: usize, receiver: Arc<Mutex<mpsc::Receiver<Job>>>) -> Worker {
        let thread = thread::spawn(move || loop {
         let job = receiver.lock().expect("Thread failed to release the mutex").recv().unwrap();
-        print!("Worker {id} got a job; executing");
+        println!("Worker {id} got a job; executing");
         job();
        });
 
