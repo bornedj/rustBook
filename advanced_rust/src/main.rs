@@ -1,5 +1,6 @@
 use advanced_rust::unsafe_rust;
 use advanced_rust::advanced_traits::{Point, Human, Pilot, Wizard, Dog, Animal, OutlinePrint, Wrapper};
+use advanced_rust::advanced_types;
 fn main () {
     unsafe_rust::raw_pointers();// declaration of raw pointers outside of an unsafe block
     unsafe_rust::raw_pointer_arbitrary(); // declares a raw pointer at an arbitrary memory location. Just a demonstration that this is possible, there are extremely few cases where you would chose to do this
@@ -38,6 +39,11 @@ fn main () {
     let print_point = Point {x: 1, y: 2};
     print_point.outline_print();
 
+    // demonstrating the newtype pattern
     let w = Wrapper(vec![String::from("hello"), String::from("world")]);
     println!("w = {}", w);
+
+    // shows how to create a type alias with the kilometers type
+    advanced_types::type_alias();
+    advanced_types::long_type_alias(); // shows common use for type alias, reducing the number times you write a long signature or parameter
 }
