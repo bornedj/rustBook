@@ -91,4 +91,4 @@ Covers advanced traits, types, and functions/closures, unsafe Rust, and macros.
 
 ## Final Project
 
-Building a web server from scratch using the standard library.
+Building my own web server library from scratch, starting with a TCP listener. The server is multi-threaded. The web server makes use of nothing but standard library packages.

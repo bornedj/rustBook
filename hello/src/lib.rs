@@ -4,7 +4,7 @@ use std::{thread, sync::{mpsc, Arc, Mutex}};
 #[derive(Debug)]
 pub struct ThreadPool {
     workers: Vec<Worker>,
-    sender: mpsc::Sender<Job>,
+    sender: Option<mpsc::Sender<Job>>,
 }
 
 type Job = Box<dyn FnOnce() + Send + 'static>;
@@ -17,25 +17,33 @@ pub enum PoolCreationError {
 #[derive(Debug)]
 struct Worker {
     id: usize,
-    thread: thread::JoinHandle<Arc<Mutex<mpsc::Receiver<Job>>>>,
+    // thread: thread::JoinHandle<Arc<Mutex<mpsc::Receiver<Job>>>>,
+    thread: Option<thread::JoinHandle<()>>,
 }
 
 impl Worker {
     fn new(id: usize, receiver: Arc<Mutex<mpsc::Receiver<Job>>>) -> Worker {
        let thread = thread::spawn(move || loop {
-        let job = receiver.lock().expect("Thread failed to release the mutex").recv().unwrap();
-        println!("Worker {id} got a job; executing");
-        job();
+        match receiver.lock().unwrap().recv() {
+            Ok(job) => {
+                println!("Worker {id} got a job; executing");
+                job();
+            }, 
+            Err(_) => {
+                println!("Worker {id} disconnected; shutting down");
+                break;
+            }
+        }
        });
 
-       Worker { id, thread }
+       Worker { id, thread: Some(thread) }
     }
 }
 
 impl ThreadPool {
     pub fn execute<F>(&self, f: F) where F: FnOnce() + Send + 'static,  {
         let job = Box::new(f);
-        self.sender.send(job).unwrap();
+        self.sender.as_ref().unwrap().send(job).unwrap();
     }
 
     /// Creates a new ThreadPool.
@@ -49,13 +57,26 @@ impl ThreadPool {
             for i in 0..size {
                 workers.push(Worker::new(i, Arc::clone(&receiver)));
             }
-            return Ok(ThreadPool { workers, sender })
+            return Ok(ThreadPool { workers, sender: Some(sender) })
         }
 
         Err(PoolCreationError::ZeroSizeError(String::from("Thread pool cannot have a size of 0")))
     }
 }
 
+///Implementing the Drop trait for ThreadPool
+/// Ensures threads complete their job before closing
+impl Drop for ThreadPool {
+    fn drop(&mut self) {
+       for worker in &mut self.workers {
+        drop(self.sender.take());
+        println!("Shutting down worker {}", worker.id);
+        if let Some(thread) = worker.thread.take() {
+            thread.join().unwrap();
+        }
+       }
+    }
+}
 
 #[cfg(test)]
 mod tests {
